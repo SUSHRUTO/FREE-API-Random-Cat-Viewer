@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>CatVerse - Random Cat Viewer</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-950 text-white min-h-screen font-sans">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-gray-900 border-b border-gray-800 shadow-lg">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+      <div>
+
+        <h1 class="text-3xl font-bold text-pink-400">
+          🐱 CatVerse
+        </h1>
+
+        <p class="text-gray-400 text-sm mt-1">
+          Professional Random Cat Viewer
+        </p>
+
+      </div>
+
+      <button
+        onclick="loadRandomCat()"
+        class="bg-pink-500 hover:bg-pink-600 px-5 py-2 rounded-xl font-semibold transition"
+      >
+        New Cat
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gradient-to-r from-pink-500 to-purple-600 py-20">
+
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+      <h2 class="text-5xl md:text-6xl font-bold">
+        Discover Cute Cats 🐾
+      </h2>
+
+      <p class="mt-6 text-xl text-pink-100">
+        Browse adorable random cat images powered by FreeAPI
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- MAIN CAT VIEWER -->
+  <main class="max-w-6xl mx-auto px-6 py-14">
+
+    <!-- LOADING -->
+    <div
+      id="loading"
+      class="hidden text-center text-2xl font-bold text-pink-300 mb-10"
+    >
+      Loading cute cat...
+    </div>
+
+    <!-- CAT CARD -->
+    <div
+      class="bg-gray-900 border border-gray-800 rounded-3xl overflow-hidden shadow-2xl"
+    >
+
+      <!-- IMAGE -->
+      <div class="relative bg-black">
+
+        <img
+          id="cat-image"
+          src=""
+          alt="Random Cat"
+          class="w-full h-[500px] object-contain bg-black"
+        />
+
+        <div
+          class="absolute top-4 right-4 bg-black/60 px-4 py-2 rounded-full text-sm"
+        >
+          🐾 Random Cat
+        </div>
+
+      </div>
+
+      <!-- CONTENT -->
+      <div class="p-8">
+
+        <div class="flex flex-col md:flex-row md:justify-between gap-6">
+
+          <div>
+
+            <h2
+              id="cat-title"
+              class="text-4xl font-bold text-pink-400"
+            >
+              Cute Cat
+            </h2>
+
+            <p
+              id="cat-description"
+              class="text-gray-300 mt-4 text-lg leading-relaxed"
+            >
+              Click the button to explore random adorable cats.
+            </p>
+
+          </div>
+
+          <div class="flex flex-col gap-4">
+
+            <button
+              onclick="loadRandomCat()"
+              class="bg-pink-500 hover:bg-pink-600 px-6 py-3 rounded-xl font-semibold transition"
+            >
+              Generate Random Cat
+            </button>
+
+            <button
+              onclick="downloadImage()"
+              class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-xl font-semibold transition"
+            >
+              Download Image
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CAT FACT SECTION -->
+    <section class="mt-14">
+
+      <div
+        class="bg-gradient-to-r from-pink-500 to-purple-600 rounded-3xl p-10 text-center shadow-2xl"
+      >
+
+        <h2 class="text-3xl font-bold mb-6">
+          🐱 Cat Fun Fact
+        </h2>
+
+        <p
+          id="cat-fact"
+          class="text-2xl leading-relaxed"
+        >
+          Cats sleep for around 13 to 16 hours a day.
+        </p>
+
+        <button
+          onclick="generateFact()"
+          class="mt-8 bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
+        >
+          New Fact
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="mt-16">
+
+      <div class="flex justify-between items-center mb-8">
+
+        <h2 class="text-4xl font-bold text-pink-400">
+          🖼️ Recently Viewed Cats
+        </h2>
+
+        <button
+          onclick="clearGallery()"
+          class="bg-red-500 hover:bg-red-600 px-5 py-2 rounded-xl font-semibold transition"
+        >
+          Clear Gallery
+        </button>
+
+      </div>
+
+      <div
+        id="gallery"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      ></div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800 py-8 text-center text-gray-500 text-sm">
+
+    © 2026 CatVerse | Built using FreeAPI Random Cat Endpoint
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
