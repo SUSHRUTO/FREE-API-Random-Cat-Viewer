@@ -12,11 +12,6 @@ It also includes random cat generation, cat facts, image download functionality,
 
 Deployment Link: https://free-api-random-cat-viewer.netlify.app/
 
----
-
-# 📂 GitHub Repository
-
-GitHub Repository Link: https://github.com/your-username/catverse
 
 ---
 
